@@ -1,12 +1,16 @@
-// Import packages
 const express = require("express");
+const dotenv = require("dotenv");
 const home = require("./routes/home");
 
-// Middlewares
+// Init
+dotenv.config();
 const app = express();
+
+// Middlewares
 app.use(express.json());
 
 // Routes
+app.use("/", home);
 app.use("/home", home);
 
 // connection
